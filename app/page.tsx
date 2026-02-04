@@ -200,7 +200,7 @@ export default function Portfolio() {
             >
               {'>'}{' '}
               <a
-                href="https://netbill.me/"
+                href="https://netbill-staging.onrender.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
