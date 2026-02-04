@@ -1,0 +1,145 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff; /* Preserved */
+  --foreground: #000000; /* Preserved */
+  --card: #ffffff; /* Preserved */
+  --card-foreground: #000000; /* Preserved */
+  --popover: #ffffff; /* Preserved */
+  --popover-foreground: #000000; /* Preserved */
+  --primary: #000000; /* Preserved */
+  --primary-foreground: #ffffff; /* Preserved */
+  --secondary: #ffffff; /* Preserved */
+  --secondary-foreground: #000000; /* Preserved */
+  --muted: #ffffff; /* Preserved */
+  --muted-foreground: #000000; /* Preserved */
+  --accent: #ffffff; /* Preserved */
+  --accent-foreground: #000000; /* Preserved */
+  --destructive: #000000; /* Preserved */
+  --destructive-foreground: #000000; /* Preserved */
+  --border: #000000; /* Preserved */
+  --input: #ffffff; /* Preserved */
+  --ring: #000000; /* Preserved */
+  --chart-1: #000000; /* Preserved */
+  --chart-2: #000000; /* Preserved */
+  --chart-3: #000000; /* Preserved */
+  --chart-4: #000000; /* Preserved */
+  --chart-5: #000000; /* Preserved */
+  --radius: 0; /* Preserved */
+  --sidebar: #ffffff; /* Preserved */
+  --sidebar-foreground: #000000; /* Preserved */
+  --sidebar-primary: #000000; /* Preserved */
+  --sidebar-primary-foreground: #ffffff; /* Preserved */
+  --sidebar-accent: #ffffff; /* Preserved */
+  --sidebar-accent-foreground: #000000; /* Preserved */
+  --sidebar-border: #000000; /* Preserved */
+  --sidebar-ring: #000000; /* Preserved */
+}
+
+.dark {
+  --background: #000000; /* Preserved */
+  --foreground: #ffffff; /* Preserved */
+  --card: #000000; /* Preserved */
+  --card-foreground: #ffffff; /* Preserved */
+  --popover: #000000; /* Preserved */
+  --popover-foreground: #ffffff; /* Preserved */
+  --primary: #ffffff; /* Preserved */
+  --primary-foreground: #000000; /* Preserved */
+  --secondary: #000000; /* Preserved */
+  --secondary-foreground: #ffffff; /* Preserved */
+  --muted: #000000; /* Preserved */
+  --muted-foreground: #ffffff; /* Preserved */
+  --accent: #000000; /* Preserved */
+  --accent-foreground: #ffffff; /* Preserved */
+  --destructive: #ffffff; /* Preserved */
+  --destructive-foreground: #ffffff; /* Preserved */
+  --border: #ffffff; /* Preserved */
+  --input: #000000; /* Preserved */
+  --ring: #ffffff; /* Preserved */
+  --chart-1: #ffffff; /* Preserved */
+  --chart-2: #ffffff; /* Preserved */
+  --chart-3: #ffffff; /* Preserved */
+  --chart-4: #ffffff; /* Preserved */
+  --chart-5: #ffffff; /* Preserved */
+  --sidebar: #000000; /* Preserved */
+  --sidebar-foreground: #ffffff; /* Preserved */
+  --sidebar-primary: #ffffff; /* Preserved */
+  --sidebar-primary-foreground: #000000; /* Preserved */
+  --sidebar-accent: #000000; /* Preserved */
+  --sidebar-accent-foreground: #ffffff; /* Preserved */
+  --sidebar-border: #ffffff; /* Preserved */
+  --sidebar-ring: #ffffff; /* Preserved */
+}
+
+@theme inline {
+  --font-sans: 'JetBrains Mono', 'Menlo', 'Courier New', monospace; /* Preserved */
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Courier New', monospace; /* Preserved */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50; /* Updated from outline-none */
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Brutalist styling */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'JetBrains Mono', 'Menlo', 'Courier New', monospace;
+}
+
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
