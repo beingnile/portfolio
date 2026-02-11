@@ -64,15 +64,58 @@ export default function Portfolio() {
           <p>
             Backend engineer with 2+ years building scalable web applications
             and secure payment systems. Architecting high-performance systems
-            that handle 7,000+ requests/second with Flask, Node.js, and Redis.
+            that might survive a doomsday.
           </p>
           <p>
             Actively learning offensive security through hands-on pentesting
             practice. Published 100+ Medium articles covering OWASP Top 10,
             penetration testing methodologies, HackTheBox walkthroughs, and
-            ethical hacking fundamentals. Experienced in input validation, rate
-            limiting, and secure payment processing integrations.
+            ethical hacking and computer science fundamentals.
           </p>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="border-b border-black px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6">$ /stack</h2>
+        <div className="space-y-4 text-sm">
+          <div>
+            <p className="font-bold mb-2">Backend</p>
+            <p className="ml-4">Python, Flask, Node.js, Express, RESTful APIs</p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Databases & Caching</p>
+            <p className="ml-4">MySQL, MongoDB, Redis</p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Security & Systems</p>
+            <p className="ml-4">
+              Secure payment processing, input validation, rate limiting, RADIUS
+              configuration
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Offensive Security</p>
+            <p className="ml-4">
+              Nmap, Burp Suite, Metasploit, Shodan, HackTheBox, OWASP Top 10
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Integrations</p>
+            <p className="ml-4">
+              M-Pesa Daraja API, Paystack, SMTP, payment gateway integration
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Tools & DevOps</p>
+            <p className="ml-4">
+              Docker, Git, Shell scripting, Postman, testing, CI/CD
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Frontend</p>
+            <p className="ml-4">JavaScript, TypeScript, HTML5, CSS</p>
+          </div>
         </div>
       </section>
 
@@ -200,7 +243,7 @@ export default function Portfolio() {
             >
               {'>'}{' '}
               <a
-                href="https://netbill-staging.onrender.com/"
+                href="https://netbill.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
@@ -395,53 +438,9 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /stack</h2>
-        <div className="space-y-4 text-sm">
-          <div>
-            <p className="font-bold mb-2">Backend</p>
-            <p className="ml-4">Python, Flask, Node.js, Express, RESTful APIs</p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Databases & Caching</p>
-            <p className="ml-4">MySQL, MongoDB, Redis</p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Security & Systems</p>
-            <p className="ml-4">
-              Secure payment processing, input validation, rate limiting, RADIUS
-              configuration
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Offensive Security</p>
-            <p className="ml-4">
-              Nmap, Burp Suite, Metasploit, Shodan, HackTheBox, OWASP Top 10
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Integrations</p>
-            <p className="ml-4">
-              M-Pesa Daraja API, Paystack, SMTP, payment gateway integration
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Tools & DevOps</p>
-            <p className="ml-4">
-              Docker, Git, Shell scripting, Postman, testing, CI/CD
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Frontend</p>
-            <p className="ml-4">JavaScript, TypeScript, HTML5, CSS</p>
-          </div>
-        </div>
-      </section>
-
       {/* Footer Section */}
       <footer className="px-8 py-12 text-center text-xs border-t border-black">
-        <p>built with spite for ai design trends</p>
+        <p>built with spite for unemployment</p>
         <p className="mt-2">© 2025 nile odhiambo okomo</p>
       </footer>
     </main>
