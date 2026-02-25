@@ -441,7 +441,7 @@ export default function Portfolio() {
       {/* Footer Section */}
       <footer className="px-8 py-12 text-center text-xs border-t border-black">
         <p>built with spite for unemployment</p>
-        <p className="mt-2">© 2025 nile odhiambo okomo</p>
+        <p className="mt-2">© 2026 nile odhiambo okomo</p>
       </footer>
     </main>
   )
