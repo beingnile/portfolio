@@ -186,10 +186,7 @@ export default function Portfolio() {
                 Android and iOS device management in Go. Implemented the Apple
                 MDM protocol server (check-in, command queue, push certs)
                 alongside Google&apos;s Android Management API; remote lock and
-                wipe, per-customer access control, audit log
-              </li>
-              <li>
-                • <span className="font-bold">Quik-MDM:</span> hardened
+                wipe, per-customer access control, audit log. Hardened
                 deployment with a non-root 31.5 MB container and a systemd unit
                 with a syscall filter and read-only filesystem
               </li>
