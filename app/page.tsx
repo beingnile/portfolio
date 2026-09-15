@@ -11,7 +11,7 @@ export default function Portfolio() {
       <header className="border-b border-black px-8 py-12">
         <h1 className="text-4xl font-bold mb-2">NILE ODHIAMBO OKOMO</h1>
         <p className="text-lg mb-6">
-          Backend Engineer / Penetration Tester
+          Backend Engineer / Application Security
         </p>
 
         <div className="space-y-1 text-sm">
@@ -62,15 +62,20 @@ export default function Portfolio() {
         <h2 className="text-2xl font-bold mb-6">$ /profile</h2>
         <div className="space-y-4 text-sm leading-relaxed">
           <p>
-            Backend engineer with 2+ years building scalable web applications
-            and secure payment systems. Architecting high-performance systems
-            that might survive a doomsday.
+            I build backends for payment, network and device management
+            systems, and I spend a lot of my time trying to break them.
           </p>
           <p>
-            Actively learning offensive security through hands-on pentesting
-            practice. Published 100+ Medium articles covering OWASP Top 10,
-            penetration testing methodologies, HackTheBox walkthroughs, and
-            ethical hacking and computer science fundamentals.
+            I run NetBill, a billing and router provisioning platform for small
+            ISPs, and work as a freelance backend engineer at StrataxIQ and
+            Zuka. Payments run on M-Pesa, routers talk RADIUS, and every
+            webhook is assumed hostile until proven otherwise.
+          </p>
+          <p>
+            I write a public pentesting series on Medium: Hack The Box
+            machines, privilege escalation, SQL injection, CVSS and MITRE
+            ATT&amp;CK. Looking for application security and security
+            engineering roles.
           </p>
         </div>
       </section>
@@ -80,41 +85,44 @@ export default function Portfolio() {
         <h2 className="text-2xl font-bold mb-6">$ /stack</h2>
         <div className="space-y-4 text-sm">
           <div>
+            <p className="font-bold mb-2">Security</p>
+            <p className="ml-4">
+              Web app testing (OWASP Top 10), Burp Suite, Nmap, Metasploit,
+              Linux privilege escalation, auth and session design, RBAC,
+              webhook and payment security, deployment hardening
+            </p>
+          </div>
+          <div>
             <p className="font-bold mb-2">Backend</p>
-            <p className="ml-4">Python, Flask, Node.js, Express, RESTful APIs</p>
+            <p className="ml-4">
+              Python (Flask, FastAPI), Go, Node.js, Express, Frappe / ERPNext,
+              Celery
+            </p>
           </div>
           <div>
             <p className="font-bold mb-2">Databases & Caching</p>
-            <p className="ml-4">MySQL, MongoDB, Redis</p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Security & Systems</p>
             <p className="ml-4">
-              Secure payment processing, input validation, rate limiting, RADIUS
-              configuration
+              MySQL, PostgreSQL, Redis, SQLite, Elasticsearch
             </p>
           </div>
           <div>
-            <p className="font-bold mb-2">Offensive Security</p>
+            <p className="font-bold mb-2">Networking</p>
             <p className="ml-4">
-              Nmap, Burp Suite, Metasploit, Shodan, HackTheBox, OWASP Top 10
+              RADIUS / FreeRADIUS, MikroTik RouterOS, captive portals,
+              Cloudflare, Nginx
             </p>
           </div>
           <div>
-            <p className="font-bold mb-2">Integrations</p>
+            <p className="font-bold mb-2">Payments</p>
             <p className="ml-4">
-              M-Pesa Daraja API, Paystack, SMTP, payment gateway integration
+              M-Pesa Daraja (STK Push, B2C, C2B), Paystack
             </p>
           </div>
           <div>
             <p className="font-bold mb-2">Tools & DevOps</p>
             <p className="ml-4">
-              Docker, Git, Shell scripting, Postman, testing, CI/CD
+              Docker, systemd, GitHub Actions, Linux, Bash
             </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Frontend</p>
-            <p className="ml-4">JavaScript, TypeScript, HTML5, CSS</p>
           </div>
         </div>
       </section>
@@ -126,7 +134,89 @@ export default function Portfolio() {
           <div>
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-bold">
-                Backend Engineer -{' '}
+                Founder & Lead Engineer -{' '}
+                <a
+                  href="https://netbill.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  NetBill
+                </a>
+              </h3>
+              <span className="text-xs">02/2025 – Present</span>
+            </div>
+            <p className="text-sm mb-3">
+              ISP billing & MikroTik provisioning | Flask, MySQL, Redis, Celery,
+              RADIUS
+            </p>
+            <ul className="text-sm space-y-1 ml-4">
+              <li>
+                • Built and run a platform that lets small ISPs onboard routers,
+                sell plans and collect payments; 115 businesses registered
+              </li>
+              <li>
+                • One-command MikroTik onboarding that works behind
+                carrier-grade NAT: routers register, pull config and heartbeat
+                over outbound connections only
+              </li>
+              <li>
+                • Router API passwords and RADIUS secrets encrypted at rest
+              </li>
+              <li>
+                • Audited my own payment flows: found and fixed a critical
+                M-Pesa webhook authentication bypass (spoofable
+                CF-Connecting-IP on a directly reachable origin), a payout
+                double-send race, and a payout amount read from
+                attacker-controlled input
+              </li>
+              <li>• 650+ automated tests, with a regression test per fix</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="font-bold">Backend Engineer (Freelance) - StrataxIQ</h3>
+              <span className="text-xs">03/2026 – Present</span>
+            </div>
+            <p className="text-sm mb-3">Remote</p>
+            <ul className="text-sm space-y-1 ml-4">
+              <li>
+                • <span className="font-bold">Quik-MDM:</span> multi-tenant
+                Android and iOS device management in Go. Implemented the Apple
+                MDM protocol server (check-in, command queue, push certs)
+                alongside Google&apos;s Android Management API; remote lock and
+                wipe, per-customer access control, audit log
+              </li>
+              <li>
+                • <span className="font-bold">Quik-MDM:</span> hardened
+                deployment with a non-root 31.5 MB container and a systemd unit
+                with a syscall filter and read-only filesystem
+              </li>
+              <li>
+                • <span className="font-bold">TECCC:</span> RBAC across a
+                Frappe CRM so agents only touch records they own or are
+                assigned; ran a permission sweep that closed missing checks on
+                lead history, conversion and pipeline endpoints
+              </li>
+              <li>
+                • <span className="font-bold">Footfall:</span> guest WiFi SaaS
+                backend with FreeRADIUS delegating auth and accounting to the
+                API; Google OAuth, email/SMS OTP and voucher logins for
+                MikroTik, UniFi and Meraki
+              </li>
+              <li>
+                • <span className="font-bold">b2bstore (current):</span>{' '}
+                Frappe / ERPNext backend for a telecom B2B ERP: portal sessions,
+                catalog and quote-to-quotation flow
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="font-bold">
+                Backend Engineer (Freelance) -{' '}
                 <a
                   href="https://zuka.ke"
                   target="_blank"
@@ -139,24 +229,21 @@ export default function Portfolio() {
               <span className="text-xs">08/2025 – Present</span>
             </div>
             <p className="text-sm mb-3">
-              Events Management & Ticketing Platform | Nairobi, Kenya (Remote)
+              Event ticketing with installment payments | Flask, MySQL, Redis,
+              Celery, Elasticsearch
             </p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • Architected scalable Flask backend with MySQL and Redis,
-                designed to handle 7,000+ requests/second
+                • M-Pesa STK Push collections and B2C payouts, with KYC checks
+                before organisers can withdraw
               </li>
               <li>
-                • Engineered secure M-Pesa Daraja API integration for payments,
-                collections, and refunds
+                • Redis locks against double booking; HMAC-signed QR codes
+                against ticket forgery
               </li>
               <li>
-                • Implemented robust authentication with input validation and
-                rate limiting
-              </li>
-              <li>
-                • Designed RESTful API architecture with database indexing
-                strategies
+                • JWT with refresh tokens, Google OAuth, rate limiting and
+                schema validation; 260 automated tests
               </li>
             </ul>
           </div>
@@ -179,18 +266,13 @@ export default function Portfolio() {
             <p className="text-sm mb-3">Eldoret, Kenya</p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • Built therapy booking platform from ground up using Node.js,
-                Express, and vanilla JavaScript
+                • Built a therapy booking platform with Node.js and Express in
+                a 15-person agile team
               </li>
               <li>
-                • Authored Software Requirements Specification document,
-                improving team efficiency by 40%
+                • Wrote the software requirements specification the team built
+                against; refactored the first release
               </li>
-              <li>
-                • Collaborated in 15-person agile team with code reviews and
-                pair programming
-              </li>
-              <li>• Refactored codebase to improve maintainability</li>
             </ul>
           </div>
 
@@ -212,15 +294,8 @@ export default function Portfolio() {
             <p className="text-sm mb-3">Remote, Netherlands</p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • Performed User Acceptance Testing using Postman, increasing
-                team productivity by 40%
-              </li>
-              <li>
-                • Created comprehensive test plans and technical documentation
-              </li>
-              <li>
-                • Collaborated with developers on API documentation and
-                requirements analysis
+                • User acceptance and API testing with Postman; test protocols,
+                API docs and user manuals
               </li>
             </ul>
           </div>
@@ -231,43 +306,59 @@ export default function Portfolio() {
       <section className="border-b border-black px-8 py-12">
         <h2 className="text-2xl font-bold mb-6">$ /projects</h2>
         <div className="space-y-6">
-          {/* NetBill Systems */}
+          {/* Riot */}
           <div className="border border-black">
             <button
               onClick={() =>
-                setExpandedProject(
-                  expandedProject === 'netbill' ? null : 'netbill'
-                )
+                setExpandedProject(expandedProject === 'riot' ? null : 'riot')
               }
               className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
             >
-              {'>'}{' '}
-              <a
-                href="https://netbill.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-                onClick={(e) => e.stopPropagation()}
-              >
-                NetBill Systems
-              </a>{' '}
-              - Automated WISP Billing (10/2025 – Present)
+              {'>'} Riot - Music Streaming Platform (unreleased)
             </button>
-            {expandedProject === 'netbill' && (
+            {expandedProject === 'riot' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
                 <p>
-                  Building automated billing system for Kenyan Wireless ISPs
-                  with RADIUS-based router configuration.
+                  Streaming platform where artists get paid directly, with
+                  distribution and sync licensing built in.
                 </p>
                 <p>
-                  <span className="font-bold">Stack:</span> Flask, Redis,
-                  MySQL, M-Pesa Daraja, Paystack, RADIUS
+                  <span className="font-bold">Stack:</span> FastAPI, React,
+                  PostgreSQL, JWT
                 </p>
                 <p>
-                  Features: M-Pesa and Paystack payment integration, transaction
-                  logging, plug-and-play configuration generator, concurrent
-                  billing cycles, automated notifications, real-time payment
-                  processing.
+                  Pre-launch security review found and fixed a privilege
+                  escalation that let any user register as an admin, and an
+                  upload endpoint that skipped input validation.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Sheaf */}
+          <div className="border border-black">
+            <button
+              onClick={() =>
+                setExpandedProject(expandedProject === 'sheaf' ? null : 'sheaf')
+              }
+              className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
+            >
+              {'>'} Sheaf - Social Commerce for SMEs (unreleased)
+            </button>
+            {expandedProject === 'sheaf' && (
+              <div className="p-4 border-t border-black bg-white text-sm space-y-2">
+                <p>
+                  Post a product once and sell it on WhatsApp, Facebook and
+                  Instagram. Customers pay by M-Pesa; merchants are settled
+                  daily.
+                </p>
+                <p>
+                  <span className="font-bold">Stack:</span> Flask, M-Pesa
+                  Daraja (STK Push, B2C), Meta Graph API, Africa&apos;s Talking
+                </p>
+                <p>
+                  Hardened callback authentication and fixed a settlement step
+                  that marked orders paid before the payout was confirmed.
                 </p>
               </div>
             )}
@@ -296,53 +387,13 @@ export default function Portfolio() {
             {expandedProject === 'dewm' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
                 <p>
-                  Full-featured church management application with admin
-                  dashboard for events, leadership, and member engagement.
+                  Church management application with an admin dashboard for
+                  events, leadership and member engagement.
                 </p>
                 <p>
-                  <span className="font-bold">Features:</span> Event creation
-                  and management, automated appointment booking system, digital
-                  prayer request submission, member interaction dashboard,
-                  leadership oversight tools.
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* NYC Collisions */}
-          <div className="border border-black">
-            <button
-              onClick={() =>
-                setExpandedProject(
-                  expandedProject === 'nyc' ? null : 'nyc'
-                )
-              }
-              className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
-            >
-              {'>'}{' '}
-              <a
-                href="https://beingnile-nyc-motor-vehicle-collisions-app-0wlu3l.streamlitapp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-                onClick={(e) => e.stopPropagation()}
-              >
-                NYC Motor Vehicle Collisions Dashboard
-              </a>
-            </button>
-            {expandedProject === 'nyc' && (
-              <div className="p-4 border-t border-black bg-white text-sm space-y-2">
-                <p>
-                  Interactive Streamlit dashboard analyzing NYPD collision data
-                  with KPIs tracking injury rates and accident patterns.
-                </p>
-                <p>
-                  <span className="font-bold">Stack:</span> Streamlit, Python,
-                  NYPD data
-                </p>
-                <p>
-                  Implemented caching mechanisms improving data retrieval
-                  performance by 60%.
+                  <span className="font-bold">Features:</span> Event
+                  management, appointment booking, prayer request submission,
+                  member dashboard.
                 </p>
               </div>
             )}
@@ -357,7 +408,7 @@ export default function Portfolio() {
           <div>
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-bold">
-                Co-Founder & Technical Lead -{' '}
+                Community Manager -{' '}
                 <a
                   href="https://spaceyatech.com"
                   target="_blank"
@@ -367,27 +418,16 @@ export default function Portfolio() {
                   SpaceYaTech
                 </a>
               </h3>
-              <span className="text-xs">01/2023 – Present</span>
+              <span className="text-xs">06/2022 – 04/2023</span>
             </div>
-            <p className="text-sm mb-3">
-              Open-source community building tech leaders in Africa
-            </p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • Founded and grew SpaceYaTech as a community of 5,000+ tech
-                enthusiasts across Africa
+                • Taught data structures and algorithms to 300+ developers
+                through live coding and assignments
               </li>
               <li>
-                • Spearheaded open-source initiatives including Auditmint, a
-                secure auditing framework
-              </li>
-              <li>
-                • Organized hackathons and technical workshops for skill
-                development
-              </li>
-              <li>
-                • Mentored 50+ junior developers on backend engineering and
-                offensive security
+                • Ran Discord and Twitter engagement and organised Google I/O
+                Extended events
               </li>
             </ul>
           </div>
@@ -399,42 +439,38 @@ export default function Portfolio() {
         <h2 className="text-2xl font-bold mb-6">$ /writing</h2>
         <div className="space-y-4 text-sm">
           <p>
-            <span className="font-bold">Medium Presence (01/2022 – Present)</span>
+            <span className="font-bold">Medium (01/2022 – Present)</span>
           </p>
           <p>
-            Published 100+ technical articles covering offensive security and
-            computer science fundamentals. Content focuses on practical
-            hands-on learning and bridging theory with application.
+            A 97-part public pentesting series, written as I learn. Practical
+            first, theory where it earns its place.
           </p>
           <div className="mt-4 space-y-2">
             <p className="font-bold">Topics covered:</p>
             <ul className="ml-4 space-y-1">
-              <li>
-                • Penetration testing methodologies and reconnaissance techniques
-              </li>
-              <li>
-                • OWASP Top 10 vulnerabilities and secure coding practices
-              </li>
-              <li>
-                • HackTheBox machine walkthroughs and exploitation techniques
-              </li>
-              <li>
-                • Ethical hacking tools: Nmap, Burp Suite, Shodan, Metasploit
-              </li>
-              <li>• Network security fundamentals and post-exploitation</li>
-              <li>
-                • Bug bounty hunting approaches and vulnerability disclosure
-              </li>
-              <li>• Low-level programming and computer science concepts</li>
+              <li>• Hack The Box walkthroughs with written pentest reports</li>
+              <li>• Privilege escalation and post-exploitation</li>
+              <li>• SQL injection and the OWASP Top 10</li>
+              <li>• CVSS scoring, MITRE ATT&amp;CK and OPSEC</li>
+              <li>• Nmap, Burp Suite, Shodan, Metasploit</li>
             </ul>
           </div>
           <p className="mt-4">
-            <span className="font-bold">Publications:</span> Medium, MeetCyber,
-            System Weakness, Python in Plain English
+            <span className="font-bold">Currently training on:</span>{' '}
+            pwn.college and PortSwigger Web Security Academy
           </p>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="border-b border-black px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6">$ /education</h2>
+        <div className="flex justify-between items-start text-sm">
           <p>
-            <span className="font-bold">Readership:</span> 170+ followers
+            <span className="font-bold">BSc Electronics</span> - University
+            of Eastern Africa, Baraton
           </p>
+          <span className="text-xs">Expected 2027</span>
         </div>
       </section>
 
