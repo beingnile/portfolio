@@ -7,9 +7,8 @@ import './globals.css'
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Nile Odhiambo Okomo - Backend Engineer & Penetration Tester',
-  description: 'Backend engineer building scalable systems. Offensive security practitioner. 100+ Medium articles on pentesting and ethical hacking.',
-  generator: 'v0.app',
+  title: 'Nile Odhiambo Okomo - Backend & Application Security Engineer',
+  description: 'Backend engineer building payment, network and device management systems, and testing them the way an attacker would. Founder of NetBill.',
   icons: {
     icon: [
       {
