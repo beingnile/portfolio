@@ -6,7 +6,7 @@ export default function Portfolio() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
   return (
-    <main className="min-h-screen bg-white text-black font-mono">
+    <main className="min-h-screen max-w-4xl mx-auto bg-white text-black font-mono border-x border-black">
       {/* Header Section */}
       <header className="border-b border-black px-8 py-12">
         <h1 className="text-4xl font-bold mb-2">NILE ODHIAMBO OKOMO</h1>
