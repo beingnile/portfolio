@@ -39,7 +39,7 @@ export default async function OpengraphImage() {
             Backend &amp; Application Security Engineer
           </div>
           <div style={{ fontSize: 28, marginTop: 32, color: '#aaa' }}>
-            payments · routers · RADIUS · and the holes in them
+            I build payment and device backends, then break them
           </div>
         </div>
       </div>
