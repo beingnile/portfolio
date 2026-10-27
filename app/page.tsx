@@ -11,7 +11,7 @@ export default function Portfolio() {
       <header className="border-b border-black px-8 py-12">
         <h1 className="text-4xl font-bold mb-2">NILE ODHIAMBO OKOMO</h1>
         <p className="text-lg mb-6">
-          Backend Engineer / Application Security
+          Backend &amp; Application Security Engineer
         </p>
 
         <div className="space-y-1 text-sm">
@@ -166,45 +166,27 @@ export default function Portfolio() {
             <p className="text-sm mb-3">Remote</p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • <span className="font-bold">Quik-MDM</span> (live as{' '}
-                <a
-                  href="https://mobilelinkup.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  MobileLinkUp
-                </a>
-                ): Go backend for Android and iOS device management. Wrote the
-                Apple MDM protocol server and a tamper-evident audit log whose
-                hash chain is verified every hour
+                • <span className="font-bold">Device management:</span> Go
+                backend for Android and iOS device management. Wrote the Apple
+                MDM protocol server and a tamper-evident audit log whose hash
+                chain is verified every hour
               </li>
               <li>
-                • <span className="font-bold">TECCC:</span> Frappe backend for
-                a German telecom reseller&apos;s sales CRM. Added fail-closed
-                HMAC on webhooks, closed a SQL injection vector in analytics
-                filters and removed every RBAC kill switch
+                • <span className="font-bold">Sales CRM:</span> Frappe backend
+                for a telecom reseller. Added fail-closed HMAC on webhooks,
+                closed a SQL injection vector in analytics filters and removed
+                every RBAC kill switch
               </li>
               <li>
-                • <span className="font-bold">
-                  <a
-                  href="https://footfall.cloud/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  Footfall
-                </a>
-                :</span>{' '}
-                Flask and FreeRADIUS backend for guest WiFi. Fixed open
-                redirects, SSTI and SSRF, and made RADIUS clients send
-                Message-Authenticator
+                • <span className="font-bold">Guest WiFi SaaS:</span> Flask and
+                FreeRADIUS backend. Fixed open redirects, SSTI and SSRF, and
+                made RADIUS clients send Message-Authenticator
               </li>
               <li>
-                • <span className="font-bold">b2bstore:</span> ERPNext backend
-                for a telecom B2B store, from quote to invoice. Swapped
-                Administrator access for a scoped service account, with tests
-                proving what it cannot do
+                • <span className="font-bold">B2B commerce ERP:</span> ERPNext
+                backend, from quote to invoice. Swapped Administrator access
+                for a scoped service account, with tests proving what it cannot
+                do
               </li>
             </ul>
           </div>

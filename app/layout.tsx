@@ -4,11 +4,31 @@ import { JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+})
+
+const title = 'Nile Odhiambo Okomo - Backend & Application Security Engineer'
+const description =
+  'Backend engineer building payment, network and device management systems, and testing them the way an attacker would. Founder of NetBill.'
 
 export const metadata: Metadata = {
-  title: 'Nile Odhiambo Okomo - Backend & Application Security Engineer',
-  description: 'Backend engineer building payment, network and device management systems, and testing them the way an attacker would. Founder of NetBill.',
+  metadataBase: new URL('https://nile-okomo.vercel.app'),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/',
+    siteName: 'Nile Okomo',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
   icons: {
     icon: [
       {
@@ -31,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-mono antialiased`}>
+      <body className={`${jetbrainsMono.variable} font-mono antialiased`}>
         {children}
         <Analytics />
       </body>
