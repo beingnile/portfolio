@@ -54,82 +54,58 @@ export default function Portfolio() {
               beingnile
             </a>
           </p>
+          <p>
+            <span className="font-bold">cv:</span>{' '}
+            <a
+              href="/Nile_Okomo_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Nile_Okomo_CV.pdf
+            </a>
+          </p>
+          <p>
+            <span className="font-bold">based:</span> Kenya (remote, UTC+3)
+          </p>
         </div>
       </header>
 
       {/* Profile Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /profile</h2>
+        <h2 className="text-2xl font-bold mb-6">/profile</h2>
         <div className="space-y-4 text-sm leading-relaxed">
           <p>
-            I build backends for payment, network and device management
-            systems, and I spend a lot of my time trying to break them.
+            Hey, I&apos;m Nile. I write backends, mostly the parts that move
+            money and talk to routers, and then I go looking for the
+            holes in them.
           </p>
           <p>
-            I run NetBill, a billing and router provisioning platform for small
-            ISPs, and work as a freelance backend engineer at StrataxIQ and
-            Zuka. Payments run on M-Pesa, routers talk RADIUS, and every
-            webhook is assumed hostile until proven otherwise.
+            I founded NetBill in February 2025, billing and router provisioning
+            for small ISPs in Kenya. 115 businesses have signed up so far. I
+            also freelance for StrataxIQ, building backends for CRM, ERP,
+            device management and guest WiFi products. Until October
+            2026 I built event ticketing on M-Pesa for Zuka, and I still help
+            out there with occasional maintenance.
           </p>
           <p>
-            I write a public pentesting series on Medium: Hack The Box
-            machines, privilege escalation, SQL injection, CVSS and MITRE
-            ATT&amp;CK. Looking for application security and security
-            engineering roles.
+            NetBill is stable and needs a few hours a week, so a new role would
+            be my main focus. I&apos;m looking for application security or
+            security engineering roles, full-time or contract, preferably
+            remote. If that&apos;s
+            you, email me. The bugs I&apos;ve learned the most from are{' '}
+            <a href="#bugs" className="underline">
+              at the bottom of this page
+            </a>
+            .
           </p>
-        </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /stack</h2>
-        <div className="space-y-4 text-sm">
-          <div>
-            <p className="font-bold mb-2">Security</p>
-            <p className="ml-4">
-              Web app testing (OWASP Top 10), Burp Suite, Nmap, Metasploit,
-              Linux privilege escalation, auth and session design, RBAC,
-              webhook and payment security, deployment hardening
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Backend</p>
-            <p className="ml-4">
-              Python (Flask, FastAPI), Go, Node.js, Express, Frappe / ERPNext,
-              Celery
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Databases & Caching</p>
-            <p className="ml-4">
-              MySQL, PostgreSQL, Redis, SQLite, Elasticsearch
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Networking</p>
-            <p className="ml-4">
-              RADIUS / FreeRADIUS, MikroTik RouterOS, captive portals,
-              Cloudflare, Nginx
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Payments</p>
-            <p className="ml-4">
-              M-Pesa Daraja (STK Push, B2C, C2B), Paystack
-            </p>
-          </div>
-          <div>
-            <p className="font-bold mb-2">Tools & DevOps</p>
-            <p className="ml-4">
-              Docker, systemd, GitHub Actions, Linux, Bash
-            </p>
-          </div>
+          <p>Away from the keyboard: guitar, music and chess.</p>
         </div>
       </section>
 
       {/* Work Experience Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /work</h2>
+        <h2 className="text-2xl font-bold mb-6">/work</h2>
         <div className="space-y-8">
           <div>
             <div className="flex justify-between items-start mb-2">
@@ -164,11 +140,9 @@ export default function Portfolio() {
                 • Router API passwords and RADIUS secrets encrypted at rest
               </li>
               <li>
-                • Audited my own payment flows: found and fixed a critical
-                M-Pesa webhook authentication bypass (spoofable
-                CF-Connecting-IP on a directly reachable origin), a payout
-                double-send race, and a payout amount read from
-                attacker-controlled input
+                • Audited my own payment flows and fixed a webhook
+                authentication bypass, a payout double-send race and a
+                client-controlled payout amount (details below)
               </li>
               <li>• 650+ automated tests, with a regression test per fix</li>
             </ul>
@@ -176,36 +150,61 @@ export default function Portfolio() {
 
           <div>
             <div className="flex justify-between items-start mb-2">
-              <h3 className="font-bold">Backend Engineer (Freelance) - StrataxIQ</h3>
+              <h3 className="font-bold">
+                Backend Engineer (Freelance) -{' '}
+                <a
+                  href="https://strataxiq.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  StrataxIQ
+                </a>
+              </h3>
               <span className="text-xs">03/2026 – Present</span>
             </div>
             <p className="text-sm mb-3">Remote</p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
-                • <span className="font-bold">Quik-MDM:</span> multi-tenant
-                Android and iOS device management in Go. Implemented the Apple
-                MDM protocol server (check-in, command queue, push certs)
-                alongside Google&apos;s Android Management API; remote lock and
-                wipe, per-customer access control, audit log. Hardened
-                deployment with a non-root 31.5 MB container and a systemd unit
-                with a syscall filter and read-only filesystem
+                • <span className="font-bold">Quik-MDM</span> (live as{' '}
+                <a
+                  href="https://mobilelinkup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  MobileLinkUp
+                </a>
+                ): Go backend for Android and iOS device management. Wrote the
+                Apple MDM protocol server and a tamper-evident audit log whose
+                hash chain is verified every hour
               </li>
               <li>
-                • <span className="font-bold">TECCC:</span> RBAC across a
-                Frappe CRM so agents only touch records they own or are
-                assigned; ran a permission sweep that closed missing checks on
-                lead history, conversion and pipeline endpoints
+                • <span className="font-bold">TECCC:</span> Frappe backend for
+                a German telecom reseller&apos;s sales CRM. Added fail-closed
+                HMAC on webhooks, closed a SQL injection vector in analytics
+                filters and removed every RBAC kill switch
               </li>
               <li>
-                • <span className="font-bold">Footfall:</span> guest WiFi SaaS
-                backend with FreeRADIUS delegating auth and accounting to the
-                API; Google OAuth, email/SMS OTP and voucher logins for
-                MikroTik, UniFi and Meraki
+                • <span className="font-bold">
+                  <a
+                  href="https://footfall.cloud/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  Footfall
+                </a>
+                :</span>{' '}
+                Flask and FreeRADIUS backend for guest WiFi. Fixed open
+                redirects, SSTI and SSRF, and made RADIUS clients send
+                Message-Authenticator
               </li>
               <li>
-                • <span className="font-bold">b2bstore (current):</span>{' '}
-                Frappe / ERPNext backend for a telecom B2B ERP: portal sessions,
-                catalog and quote-to-quotation flow
+                • <span className="font-bold">b2bstore:</span> ERPNext backend
+                for a telecom B2B store, from quote to invoice. Swapped
+                Administrator access for a scoped service account, with tests
+                proving what it cannot do
               </li>
             </ul>
           </div>
@@ -223,7 +222,7 @@ export default function Portfolio() {
                   Zuka
                 </a>
               </h3>
-              <span className="text-xs">08/2025 – Present</span>
+              <span className="text-xs">08/2025 – 10/2026</span>
             </div>
             <p className="text-sm mb-3">
               Event ticketing with installment payments | Flask, MySQL, Redis,
@@ -242,6 +241,27 @@ export default function Portfolio() {
                 • JWT with refresh tokens, Google OAuth, rate limiting and
                 schema validation; 260 automated tests
               </li>
+              <li>• Still do occasional maintenance</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="font-bold">Freelance Developer - Tweeps</h3>
+              <span className="text-xs">01/2024 – 02/2025</span>
+            </div>
+            <p className="text-sm mb-3">
+              Local fast food restaurant | React, Next.js, Flask
+            </p>
+            <ul className="text-sm space-y-1 ml-4">
+              <li>
+                • Their go-to person for anything technical
+              </li>
+              <li>
+                • Built their website, then an ordering platform with order
+                tracking, an admin dashboard and staff management
+              </li>
+              <li>• Built a payment dashboard for the business</li>
             </ul>
           </div>
 
@@ -260,7 +280,7 @@ export default function Portfolio() {
               </h3>
               <span className="text-xs">02/2023 – 07/2023</span>
             </div>
-            <p className="text-sm mb-3">Eldoret, Kenya</p>
+            <p className="text-sm mb-3">Remote</p>
             <ul className="text-sm space-y-1 ml-4">
               <li>
                 • Built a therapy booking platform with Node.js and Express in
@@ -299,39 +319,57 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Tech Stack Section */}
+      <section className="border-b border-black px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6">/stack</h2>
+        <div className="space-y-4 text-sm">
+          <div>
+            <p className="font-bold mb-2">Security</p>
+            <p className="ml-4">
+              Web app testing (OWASP Top 10), Burp Suite, Nmap, Metasploit,
+              Linux privilege escalation, auth and session design, RBAC,
+              webhook and payment security, deployment hardening
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Backend</p>
+            <p className="ml-4">
+              Python (Flask, FastAPI, Django), Go, Node.js, Express, Frappe / ERPNext,
+              Celery
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Databases & Caching</p>
+            <p className="ml-4">
+              MySQL, PostgreSQL, Redis, SQLite, Elasticsearch
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Networking</p>
+            <p className="ml-4">
+              RADIUS / FreeRADIUS, MikroTik RouterOS, captive portals,
+              Cloudflare, Nginx
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Payments</p>
+            <p className="ml-4">
+              M-Pesa Daraja (STK Push, B2C, C2B), Paystack
+            </p>
+          </div>
+          <div>
+            <p className="font-bold mb-2">Tools & DevOps</p>
+            <p className="ml-4">
+              Docker, systemd, GitHub Actions, Linux, Bash
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /projects</h2>
+        <h2 className="text-2xl font-bold mb-6">/projects</h2>
         <div className="space-y-6">
-          {/* Riot */}
-          <div className="border border-black">
-            <button
-              onClick={() =>
-                setExpandedProject(expandedProject === 'riot' ? null : 'riot')
-              }
-              className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
-            >
-              {'>'} Riot - Music Streaming Platform (unreleased)
-            </button>
-            {expandedProject === 'riot' && (
-              <div className="p-4 border-t border-black bg-white text-sm space-y-2">
-                <p>
-                  Streaming platform where artists get paid directly, with
-                  distribution and sync licensing built in.
-                </p>
-                <p>
-                  <span className="font-bold">Stack:</span> FastAPI, React,
-                  PostgreSQL, JWT
-                </p>
-                <p>
-                  Pre-launch security review found and fixed a privilege
-                  escalation that let any user register as an admin, and an
-                  upload endpoint that skipped input validation.
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Sheaf */}
           <div className="border border-black">
             <button
@@ -340,22 +378,109 @@ export default function Portfolio() {
               }
               className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
             >
-              {'>'} Sheaf - Social Commerce for SMEs (unreleased)
+              {'>'}{' '}
+              <a
+                href="https://sheaf.co.ke/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Sheaf
+              </a>{' '}
+              - Social Commerce for SMEs (in development and testing)
             </button>
             {expandedProject === 'sheaf' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
                 <p>
                   Post a product once and sell it on WhatsApp, Facebook and
-                  Instagram. Customers pay by M-Pesa; merchants are settled
-                  daily.
+                  Instagram. Customers pay by M-Pesa straight into the
+                  merchant&apos;s own account; merchants pay a monthly
+                  subscription.
                 </p>
                 <p>
                   <span className="font-bold">Stack:</span> Flask, M-Pesa
-                  Daraja (STK Push, B2C), Meta Graph API, Africa&apos;s Talking
+                  Daraja (STK Push), Meta Graph API, Africa&apos;s Talking
                 </p>
                 <p>
-                  Hardened callback authentication and fixed a settlement step
-                  that marked orders paid before the payout was confirmed.
+                  Before the switch to subscriptions, Sheaf settled merchants
+                  itself. I hardened callback authentication there and fixed a
+                  settlement step that marked orders paid before the payout was
+                  confirmed.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Coffee Beans */}
+          <div className="border border-black">
+            <button
+              onClick={() =>
+                setExpandedProject(expandedProject === 'coffee' ? null : 'coffee')
+              }
+              className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
+            >
+              {'>'}{' '}
+              <a
+                href="https://coffeebeans.tweeps.co.ke/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Coffee Beans
+              </a>{' '}
+              - Hospitality Management System (in development)
+            </button>
+            {expandedProject === 'coffee' && (
+              <div className="p-4 border-t border-black bg-white text-sm space-y-2">
+                <p>
+                  Inventory, procurement, POS, accommodation and tax reporting
+                  for hotels and restaurants, built with an accountant who
+                  wrote the internal controls spec.
+                </p>
+                <p>
+                  <span className="font-bold">Stack:</span> Django, PostgreSQL
+                </p>
+                <p>
+                  Role-based access control, maker-checker approvals and an
+                  immutable audit trail are built in from the start. Each hotel
+                  gets its own deployment and database.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Hooma */}
+          <div className="border border-black">
+            <button
+              onClick={() =>
+                setExpandedProject(expandedProject === 'hooma' ? null : 'hooma')
+              }
+              className="w-full p-4 text-left font-bold hover:bg-black hover:text-white transition-none text-sm"
+            >
+              {'>'}{' '}
+              <a
+                href="https://fikisha.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Hooma
+              </a>{' '}
+              - Parcel Sending Platform (a friend&apos;s project)
+            </button>
+            {expandedProject === 'hooma' && (
+              <div className="p-4 border-t border-black bg-white text-sm space-y-2">
+                <p>
+                  A friend&apos;s platform for sending parcels through bus
+                  companies. I contributed phone sign-in with SMS password
+                  reset, bus company offices and waybill numbers, and private
+                  storage for identity documents.
+                </p>
+                <p>
+                  <span className="font-bold">Stack:</span> Laravel
                 </p>
               </div>
             )}
@@ -379,7 +504,7 @@ export default function Portfolio() {
               >
                 Dewm Church
               </a>{' '}
-              - Church Management System (06/2025 – 07/2025)
+              - Church Management System, pro bono (05/2025 – 07/2025)
             </button>
             {expandedProject === 'dewm' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
@@ -400,8 +525,30 @@ export default function Portfolio() {
 
       {/* Leadership Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /leadership</h2>
+        <h2 className="text-2xl font-bold mb-6">/leadership</h2>
         <div className="space-y-8">
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="font-bold">
+                Volunteer -{' '}
+                <a
+                  href="https://github.com/GDG-Kisii"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  GDG Kisii
+                </a>
+              </h3>
+              <span className="text-xs">10/2021 – 10/2025</span>
+            </div>
+            <ul className="text-sm space-y-1 ml-4">
+              <li>
+                • Helped the organisers run Hacktoberfest, DevFest Western
+                Kenya and hands-on workshops
+              </li>
+            </ul>
+          </div>
           <div>
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-bold">
@@ -433,14 +580,14 @@ export default function Portfolio() {
 
       {/* Writing Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /writing</h2>
+        <h2 className="text-2xl font-bold mb-6">/writing</h2>
         <div className="space-y-4 text-sm">
           <p>
             <span className="font-bold">Medium (01/2022 – Present)</span>
           </p>
           <p>
-            A 97-part public pentesting series, written as I learn. Practical
-            first, theory where it earns its place.
+            A public pentesting series of 97+ articles, written as I learn.
+            Practical first, theory where it earns its place.
           </p>
           <div className="mt-4 space-y-2">
             <p className="font-bold">Topics covered:</p>
@@ -461,7 +608,7 @@ export default function Portfolio() {
 
       {/* Education Section */}
       <section className="border-b border-black px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6">$ /education</h2>
+        <h2 className="text-2xl font-bold mb-6">/education</h2>
         <div className="flex justify-between items-start text-sm">
           <p>
             <span className="font-bold">BSc Electronics</span> - University
@@ -471,9 +618,35 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Bugs Section */}
+      <section id="bugs" className="border-b border-black px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6">/bugs-i-learned-from</h2>
+        <div className="space-y-4 text-sm leading-relaxed">
+          <p>
+            My own M-Pesa webhook trusted the CF-Connecting-IP header, but the
+            origin server was reachable directly. Anyone who found it could
+            send NetBill a fake &quot;payment received&quot;. I fixed it, added
+            a regression test, and kept digging. I found a payout that could
+            be sent twice, and another whose amount came straight from the
+            request.
+          </p>
+          <p>
+            RouterOS has its own sense of humour. The one-line onboarding
+            command failed with &quot;No such item&quot; on factory-fresh
+            routers, and I ended up rewriting every generated script without a
+            single {'{ }'} block.
+          </p>
+          <p>
+            Riot, my music streaming platform, isn&apos;t out yet, but
+            reviewing it like an attacker would, I found that anyone could
+            register as an admin.
+          </p>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="px-8 py-12 text-center text-xs border-t border-black">
-        <p>built with spite for unemployment</p>
+        <p>built on a tonne of coffee and zero trust</p>
         <p className="mt-2">© 2026 nile odhiambo okomo</p>
       </footer>
     </main>
