@@ -521,7 +521,7 @@ export default function Portfolio() {
               >
                 Beingnile&apos;s Tuner
               </a>{' '}
-              - Offline Guitar &amp; Bass Tuner, built with Claude Code
+              - Offline Guitar &amp; Bass Tuner
             </button>
             {expandedProject === 'tuner' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
@@ -535,10 +535,8 @@ export default function Portfolio() {
                   Audio (AudioWorklet), service worker. No dependencies
                 </p>
                 <p>
-                  I set the requirements and direction; Claude wrote the code
-                  and tests. An audit found that a slack string could read as a
-                  different string, in tune, which every earlier test had
-                  missed.{' '}
+                  An audit found that a slack string could read as a different
+                  string, in tune, which every earlier test had missed.{' '}
                   <a href="/projects/tuner" className="underline">
                     How it was built, and why
                   </a>

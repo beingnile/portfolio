@@ -86,10 +86,6 @@ export default function TunerWriteUp() {
           <p>
             <span className="font-bold">size:</span> 16 KB gzipped
           </p>
-          <p>
-            <span className="font-bold">built with:</span> Claude Code. I set
-            the requirements and direction; Claude wrote the code and the tests
-          </p>
         </div>
       </header>
 
