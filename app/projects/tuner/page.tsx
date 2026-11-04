@@ -46,7 +46,7 @@ export default function TunerWriteUp() {
             beingniles-tuner.vercel.app
           </a>
           . It is written in plain JavaScript with no libraries, and the whole
-          thing is about 20 KB.
+          thing is about 22 KB.
         </p>
       </header>
 
@@ -191,9 +191,10 @@ export default function TunerWriteUp() {
           still jumped. It wasn&apos;t the main problem.
         </p>
         <p>
-          Simulated strings were clearly too well behaved. So the tuner got a
-          hidden recording mode that saves a few seconds of real audio to the
-          device, so that real playing could be tested directly.
+          Simulated strings were clearly too well behaved. So I built a small
+          recording tool to capture real audio, so that real playing could be
+          tested directly. It is for development only, and none of it is part
+          of the site.
         </p>
       </Section>
 
@@ -291,6 +292,13 @@ export default function TunerWriteUp() {
           locks onto it, which helps when a new string is far off pitch.
         </p>
         <p>
+          The Share button shows a QR code, so a bandmate can scan it from your
+          phone and start tuning. Hear notes plays each string&apos;s note, for
+          tuning by ear when the room is too loud for the microphone. A phone
+          speaker can&apos;t really play a low E, so the note is rich in
+          overtones and your ear fills in the rest.
+        </p>
+        <p>
           After your first visit it works with no connection at all, and you
           can install it like an app. Chrome, Edge and Samsung Internet offer a
           prompt, and iPhones get short instructions, since Apple doesn&apos;t
@@ -301,7 +309,7 @@ export default function TunerWriteUp() {
 
       <Section name="/how-it-was-tested">
         <p>
-          There are 49 automated tests. Most play a simulated plucked string
+          There are 53 automated tests. Most play a simulated plucked string
           through the real code, adding stiffness, noise, hum and weak low notes.
           One of them runs every string of every tuning, and one plays a real
           recording of my guitar. Another set feeds an
@@ -344,9 +352,13 @@ export default function TunerWriteUp() {
           Apart from that recording, every number on this page comes from
           simulated audio, so it shows how precise the code is, not how it will
           do in every room. On that low E, the reading may also be a few cents
-          sharp, which still needs checking against another tuner. In simulation it can also go blank in a noisy room
-          or with other instruments playing. Lowering its standards made it show
-          confidently wrong notes, so that needs real recordings to solve.
+          sharp, which still needs checking against another tuner. Noisy rooms are the biggest gap. Simply lowering the tuner&apos;s
+          standards made it show confidently wrong notes. What worked in
+          simulation was accepting a less certain reading only when several in a
+          row agree, which took a crowded room from a reading about half the time
+          to about two thirds. A very loud room still goes blank, talking can
+          read as a note, and none of this has been tried at a real band practice
+          yet.
         </p>
         <p>
           There are some known limits as well. A steady hum from something like
