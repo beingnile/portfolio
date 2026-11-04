@@ -46,7 +46,7 @@ export default function TunerWriteUp() {
             beingniles-tuner.vercel.app
           </a>
           . It is written in plain JavaScript with no libraries, and the whole
-          thing is about 16 KB.
+          thing is about 20 KB.
         </p>
       </header>
 
@@ -186,16 +186,61 @@ export default function TunerWriteUp() {
         <p>
           The jumping was harder, because even a much harsher simulation
           wouldn&apos;t reproduce it. Reading the code with the report in mind
-          turned up a likely cause. A string&apos;s overtones can briefly look
-          like the note itself, and on low E and A they line up with other open
-          strings, so a wrong reading looked completely believable. A jump to an
-          overtone now has to last, and held notes are smoothed more heavily.
+          turned up a likely cause: a string&apos;s overtones can briefly look
+          like the note itself. I fixed that, and things got better, but low E
+          still jumped. It wasn&apos;t the main problem.
         </p>
         <p>
-          The lesson was humbling: simulated strings are too well behaved. So
-          the tuner now has a hidden recording mode that saves a few seconds of
-          real audio to the device, so that real playing can become a permanent
-          test.
+          Simulated strings were clearly too well behaved. So the tuner got a
+          hidden recording mode that saves a few seconds of real audio to the
+          device, so that real playing could be tested directly.
+        </p>
+      </Section>
+
+      <Section name="/how-people-actually-tune">
+        <p>
+          Nobody plucks once. You pluck, turn the peg, and pluck again. A string
+          also starts a little sharp and falls back as the pluck dies down, by
+          more the harder you hit it, and the tuner was faithfully following
+          that every time. In simulation, hard plucks on a string that was
+          already in tune made the green display flicker 11 times in 6 seconds.
+        </p>
+        <p>
+          Now, if a note is already showing and you pluck the same string again,
+          the reading waits until the pitch stops moving quickly, for about 380
+          ms at most. That brought the flicker down to once. A first pluck and a
+          different note still show straight away.
+        </p>
+      </Section>
+
+      <Section name="/the-recording-that-found-it">
+        <p>
+          Then I recorded 15 seconds of my own low E, plucked about three times
+          a second, and ran it through the tuner. For the first time, the
+          jumping showed up in the numbers. The tuner swung across 186 cents,
+          and most of the time it read about 70 cents flat. The string was
+          really steady, at about 20 cents sharp. So it wasn&apos;t just jumpy.
+          It would have told me to tune the wrong way.
+        </p>
+        <p>
+          The recording also showed why no test had caught it. The simulated
+          strings got quieter with each overtone, as you would expect. On my
+          guitar, the 8th and 9th overtones were the loudest thing in the sound,
+          15 to 20 dB above the note itself.
+        </p>
+        <p>
+          The first stage of the tuner was getting the right answer anyway. The
+          bug was in the step after it, the one comparing several repeats, which
+          exists to make a good estimate slightly more precise. Those loud
+          overtones threw it off and it replaced a good answer with one about 90
+          cents away. Now it is only allowed to make small corrections. On the
+          same recording, the swing went from 186 cents to 5, and on the guitar
+          the jumps are gone.
+        </p>
+        <p>
+          That recording now runs with every test, so this can&apos;t quietly
+          come back. Dozens of simulated tests had passed without noticing, and
+          15 seconds of real audio found the problem straight away.
         </p>
       </Section>
 
@@ -256,9 +301,10 @@ export default function TunerWriteUp() {
 
       <Section name="/how-it-was-tested">
         <p>
-          There are 43 automated tests. Most play a simulated plucked string
+          There are 49 automated tests. Most play a simulated plucked string
           through the real code, adding stiffness, noise, hum and weak low notes.
-          One of them runs every string of every tuning. Another set feeds an
+          One of them runs every string of every tuning, and one plays a real
+          recording of my guitar. Another set feeds an
           audio file to a real browser as if it were the microphone, reads what
           appears on screen, and then shuts the server down to prove the offline
           mode works.
@@ -292,12 +338,13 @@ export default function TunerWriteUp() {
       <Section name="/what-it-doesnt-do-yet">
         <p>
           <span className="font-bold">
-            The fix for the jumping E and A strings still needs confirming on a
-            real instrument, and it is untested in iPhone Safari.
+            So far it has been checked against one guitar, with one recording,
+            and it is untested in iPhone Safari.
           </span>{' '}
-          Apart from that first real test, every number on this page comes from
+          Apart from that recording, every number on this page comes from
           simulated audio, so it shows how precise the code is, not how it will
-          do in a real room. In simulation it can also go blank in a noisy room
+          do in every room. On that low E, the reading may also be a few cents
+          sharp, which still needs checking against another tuner. In simulation it can also go blank in a noisy room
           or with other instruments playing. Lowering its standards made it show
           confidently wrong notes, so that needs real recordings to solve.
         </p>
