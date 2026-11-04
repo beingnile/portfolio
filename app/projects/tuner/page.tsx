@@ -169,6 +169,36 @@ export default function TunerWriteUp() {
         </p>
       </Section>
 
+      <Section name="/the-first-real-test">
+        <p>
+          Everything above came from simulated audio, and every test was
+          passing. Then it met a real instrument, and two things were obviously
+          wrong: the E and A strings jumped around, and the page itself kept
+          moving.
+        </p>
+        <p>
+          The page was the easy one. The status text changed size whenever the
+          display changed state, which pushed the whole layout by about 2
+          pixels. With the reading dropping in and out, that looked like
+          constant jitter. The layout no longer depends on the state, and a test
+          now fails if anything moves.
+        </p>
+        <p>
+          The jumping was harder, because even a much harsher simulation
+          wouldn&apos;t reproduce it. Reading the code with the report in mind
+          turned up a likely cause. A string&apos;s overtones can briefly look
+          like the note itself, and on low E and A they line up with other open
+          strings, so a wrong reading looked completely believable. A jump to an
+          overtone now has to last, and held notes are smoothed more heavily.
+        </p>
+        <p>
+          The lesson was humbling: simulated strings are too well behaved. So
+          the tuner now has a hidden recording mode that saves a few seconds of
+          real audio to the device, so that real playing can become a permanent
+          test.
+        </p>
+      </Section>
+
       <Section name="/other-things-testing-found">
         <p>
           Tuning the A string with the low E still ringing, which happens all
@@ -226,7 +256,7 @@ export default function TunerWriteUp() {
 
       <Section name="/how-it-was-tested">
         <p>
-          There are 37 automated tests that play a simulated plucked string
+          There are 43 automated tests. Most play a simulated plucked string
           through the real code, adding stiffness, noise, hum and weak low notes.
           One of them runs every string of every tuning. Another set feeds an
           audio file to a real browser as if it were the microphone, reads what
@@ -241,14 +271,35 @@ export default function TunerWriteUp() {
         </p>
       </Section>
 
+      <Section name="/how-a-change-goes-live">
+        <p>
+          There is no build step, so the files in the project are exactly what
+          the browser receives. A change gets tested, saved to git and pushed to
+          GitHub, and Vercel then puts it live on its own within seconds.
+        </p>
+        <p>
+          The catch is offline mode. Because the tuner saves itself to your
+          device, a returning visitor keeps their saved copy until something
+          tells them a new one exists. Forgetting that would silently leave
+          people on an old version, so one command now handles it. It runs the
+          tests, raises the version number, stamps it into the app and creates a
+          marker in the project&apos;s history. If the tests fail, nothing is
+          released, which has already stopped a few bad releases. A test also
+          fails if the site changes without a new version.
+        </p>
+      </Section>
+
       <Section name="/what-it-doesnt-do-yet">
         <p>
           <span className="font-bold">
-            It hasn&apos;t yet been checked with a real instrument and microphone
-            or on a real phone, and it is untested in iPhone Safari.
+            The fix for the jumping E and A strings still needs confirming on a
+            real instrument, and it is untested in iPhone Safari.
           </span>{' '}
-          Every number on this page comes from simulated audio, so it shows how
-          precise the code is, not how it will do in a real room.
+          Apart from that first real test, every number on this page comes from
+          simulated audio, so it shows how precise the code is, not how it will
+          do in a real room. In simulation it can also go blank in a noisy room
+          or with other instruments playing. Lowering its standards made it show
+          confidently wrong notes, so that needs real recordings to solve.
         </p>
         <p>
           There are some known limits as well. A steady hum from something like
