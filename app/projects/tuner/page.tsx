@@ -338,8 +338,8 @@ export default function TunerWriteUp() {
       <Section name="/what-it-doesnt-do-yet">
         <p>
           <span className="font-bold">
-            So far it has been checked against one guitar, with one recording,
-            and it is untested in iPhone Safari.
+            So far its accuracy has been checked against one guitar, with one
+            recording.
           </span>{' '}
           Apart from that recording, every number on this page comes from
           simulated audio, so it shows how precise the code is, not how it will
