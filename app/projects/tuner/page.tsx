@@ -284,7 +284,7 @@ export default function TunerWriteUp() {
           people on an old version, so one command now handles it. It runs the
           tests, raises the version number, stamps it into the app and creates a
           marker in the project&apos;s history. If the tests fail, nothing is
-          released, which has already stopped a few bad releases. A test also
+          released. A test also
           fails if the site changes without a new version.
         </p>
       </Section>
