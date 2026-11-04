@@ -538,7 +538,7 @@ export default function Portfolio() {
                   An audit found that a slack string could read as a different
                   string, in tune, which every earlier test had missed.{' '}
                   <a href="/projects/tuner" className="underline">
-                    How it was built, and why
+                    How it works, and why
                   </a>
                   .
                 </p>
