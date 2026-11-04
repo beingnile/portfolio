@@ -526,9 +526,10 @@ export default function Portfolio() {
             {expandedProject === 'tuner' && (
               <div className="p-4 border-t border-black bg-white text-sm space-y-2">
                 <p>
-                  A tuner that runs entirely in the browser and installs as an
-                  app, with 39 tunings from 12-string to 5-string bass. Audio
-                  stays on the device.
+                  I lost the phone I tuned with, so my band was tuning by ear at
+                  practice. Now anyone in the band can open this in their phone&apos;s
+                  browser or install it as an app, with 39 tunings from 12-string
+                  to 5-string bass. Audio stays on the device.
                 </p>
                 <p>
                   <span className="font-bold">Stack:</span> JavaScript, Web

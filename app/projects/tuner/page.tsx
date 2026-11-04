@@ -50,12 +50,17 @@ export default function TunerWriteUp() {
         </p>
       </header>
 
-      <Section name="/the-idea">
+      <Section name="/why-i-made-this">
         <p>
-          The goal was simple: a tuner that opens instantly, works with no
-          internet, and tells you the truth about your strings. Accuracy came
-          first, because a tuner that is fast and wrong is worse than no tuner
-          at all.
+          I lost my smartphone, and that was my tuner. At practice I had to tune
+          by ear, and so did our bassist, and it wasn&apos;t very accurate. Now
+          anyone in the band can open this on their phone.
+        </p>
+        <p>
+          That set the goal: a tuner that opens instantly from a link, works
+          with no internet, and tells you the truth about your strings. Accuracy
+          came first, because a tuner that is fast and wrong is worse than no
+          tuner at all. It also had to handle bass as well as guitar.
         </p>
         <p>
           Tuning accuracy is measured in cents, and there are 100 cents between
