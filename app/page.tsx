@@ -291,7 +291,7 @@ export default function Portfolio() {
           <div>
             <p className="font-bold mb-2">Payments</p>
             <p className="ml-4">
-              M-Pesa Daraja (STK Push, B2C, C2B), Paystack
+              M-Pesa Daraja (STK Push, B2C, C2B)
             </p>
           </div>
           <div>
