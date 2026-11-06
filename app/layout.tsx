@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const title = 'Nile Odhiambo Okomo - Backend & Application Security Engineer'
 const description =
-  'Backend engineer building payment, network and device management systems, and testing them the way an attacker would. Founder of NetBill.'
+  'Backend engineer building payment, network and device management systems, and testing them the way an attacker would.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nile-okomo.vercel.app'),

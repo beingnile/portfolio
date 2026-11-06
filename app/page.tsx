@@ -81,19 +81,15 @@ export default function Portfolio() {
             holes in them.
           </p>
           <p>
-            I founded NetBill in February 2025, billing and router provisioning
-            for small ISPs in Kenya. 115 businesses have signed up so far. I
-            also freelance for StrataxIQ, building backends for CRM, ERP,
+            I freelance for StrataxIQ, building backends for CRM, ERP,
             device management and guest WiFi products. Until October
             2026 I built event ticketing on M-Pesa for Zuka, and I still help
             out there with occasional maintenance.
           </p>
           <p>
-            NetBill is stable and needs a few hours a week, so a new role would
-            be my main focus. I&apos;m looking for application security or
+            I&apos;m looking for application security or
             security engineering roles, full-time or contract, preferably
-            remote. If that&apos;s
-            you, email me. The bugs I&apos;ve learned the most from are{' '}
+            remote. If that&apos;s you, email me. A bug I learned from is{' '}
             <a href="#bugs" className="underline">
               at the bottom of this page
             </a>
@@ -107,47 +103,6 @@ export default function Portfolio() {
       <section className="border-b border-black px-8 py-12">
         <h2 className="text-2xl font-bold mb-6">/work</h2>
         <div className="space-y-8">
-          <div>
-            <div className="flex justify-between items-start mb-2">
-              <h3 className="font-bold">
-                Founder & Lead Engineer -{' '}
-                <a
-                  href="https://netbill.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  NetBill
-                </a>
-              </h3>
-              <span className="text-xs">02/2025 – Present</span>
-            </div>
-            <p className="text-sm mb-3">
-              ISP billing & MikroTik provisioning | Flask, MySQL, Redis, Celery,
-              RADIUS
-            </p>
-            <ul className="text-sm space-y-1 ml-4">
-              <li>
-                • Built and run a platform that lets small ISPs onboard routers,
-                sell plans and collect payments; 115 businesses registered
-              </li>
-              <li>
-                • One-command MikroTik onboarding that works behind
-                carrier-grade NAT: routers register, pull config and heartbeat
-                over outbound connections only
-              </li>
-              <li>
-                • Router API passwords and RADIUS secrets encrypted at rest
-              </li>
-              <li>
-                • Audited my own payment flows and fixed a webhook
-                authentication bypass, a payout double-send race and a
-                client-controlled payout amount (details below)
-              </li>
-              <li>• 650+ automated tests, with a regression test per fix</li>
-            </ul>
-          </div>
-
           <div>
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-bold">
@@ -648,20 +603,6 @@ export default function Portfolio() {
       <section id="bugs" className="border-b border-black px-8 py-12">
         <h2 className="text-2xl font-bold mb-6">/bugs-i-learned-from</h2>
         <div className="space-y-4 text-sm leading-relaxed">
-          <p>
-            My own M-Pesa webhook trusted the CF-Connecting-IP header, but the
-            origin server was reachable directly. Anyone who found it could
-            send NetBill a fake &quot;payment received&quot;. I fixed it, added
-            a regression test, and kept digging. I found a payout that could
-            be sent twice, and another whose amount came straight from the
-            request.
-          </p>
-          <p>
-            RouterOS has its own sense of humour. The one-line onboarding
-            command failed with &quot;No such item&quot; on factory-fresh
-            routers, and I ended up rewriting every generated script without a
-            single {'{ }'} block.
-          </p>
           <p>
             Riot, my music streaming platform, isn&apos;t out yet, but
             reviewing it like an attacker would, I found that anyone could
